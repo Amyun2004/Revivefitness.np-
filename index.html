@@ -20,14 +20,14 @@
 
         <!-- navication bar  -->
             <ul class = "navbar">
-                <li><a href="#about" class = "hideOnMobile">About us</a></li>
+                <li><a href="#home" class = "hideOnMobile">Home</a></li>
+                <li><a href="#about-container" class = "hideOnMobile">About us </a></li>
                 <li><a href="#Programs" class = "hideOnMobile">Programs</a></li>
                 <li><a href="#Contact" class = "hideOnMobile">Contact</a></li>
                 <li><a href="#Location" class = "hideOnMobile" >Location</a></li>
                 <li><a href="#Products"  class = "hideOnMobile">Membership</a></li>
-               
-                
-             </ul>
+                  
+            </ul>
             <div class = "menubutton">
                 <a  href="#" onclick="showSidebar()">
                     <img src="button_imgs/menu_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="sidebar">
@@ -78,8 +78,8 @@
         </nav>
     </header>
 
-    <!-- About part  -->
-    <section id = "about-container">
+    
+    <section id = "home">
         <div class = "about-content">
             <img src="/logo/Revivefitness.png" alt="ReviveFitness.np" id = "logo">
             <p class = "quote">“Unleash your true self”</p>
@@ -91,34 +91,51 @@
         </div>
 
     </section>
+    <!-- About part  -->
+    <section id = "about-container">
+
+    </section>
     <!-- programs section -->
     <section id = "Programs">
         <div class = "Programs-container">
             <h2 class = "heading">Our <span>Services</span></h2>
             <div class="services-content">
                 <div class="row">
-                    <img src="img_gym/personal coaching.png" alt="client_personal_coaching">
-                    <h4>Personal Training</h4>
+                    <div class = "img-wrapper">   
+                        <img src="img_gym/personal coaching.png" alt="client_personal_coaching">
+                        <div class = "img-overlay"></div>
+                        <div class = "overlay-text">Personal Training</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class = "img-wrapper">
+                        <img src="img_gym/transformation2.png" alt="transformation">
+                        <div class = "img-overlay"></div>
+                        <div class = "overlay-text">Online coaching</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class = "img-wrapper">
+                        <img src="img_gym/strengthtraining.png" alt="Deadlift-strength_training">
+                        <div class = "img-overlay"></div>
+                        <div class = "overlay-text">Strength Tranining</div>
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <div class = "img-wrapper">
+                        <img src="img_gym/transformation I.e cut .png" alt="fatloss-cutting">
+                        <div class = "img-overlay"></div>
+                        <div class = "overlay-text">Fat loss</div>
+                    </div>
+                </div>
 
-                </div>
                 <div class="row">
-                    <img src="img_gym/transformation2.png" alt="transformation">
-                    <h4>Online coaching</h4>
-                    
-                </div>
-                <div class="row">
-                    <img src="img_gym/strengthtraining.png" alt="Deadlift-strength_training">
-                    <h4>Strength Tranining</h4>
-                    
-                </div>
-                <div class="row">
-                    <img src="img_gym/transformation I.e cut .png" alt="fatloss-cutting">
-                    <h4>Fat loss</h4>
-                    
-                </div>
-                <div class="row">
-                    <img src="img_gym/Screenshot 2025-06-22 153909.png" alt="Prep_compedition">
-                    <h4>Bodybuilding</h4>
+                    <div class = "img-wrapper">
+                        <img src="img_gym/Screenshot 2025-06-22 153909.png" alt="Prep_compedition">
+                        <div class = "img-overlay"></div>
+                        <div class = "overlay-text">Bodybuilding</div>
+                    </div>
                 </div>
             </div>
         </div>
