@@ -8,12 +8,16 @@
 /* root i.e defining variables */
 
 :root{
-    --main-color: black;
-    --sub-main-color: #333;
-    --sub-main-color-2: #ffcc00;
-    --main-font-color: white;
+  --main-color: black;
+  --sub-main-color: #333;
+  --sub-main-color-2: #ffcc00;
+  --main-font-color: white;
 }
 
+
+html{
+  scroll-behavior: smooth;
+}
 /* Header */
 header {
   position: sticky;
@@ -277,10 +281,21 @@ hr {
     justify-content: center;
     color: var(--main-font-color);
     margin-top: 3rem;
+    font-size: 2em;
+}
+
+.reg-texts{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--main-font-color);
+  margin-top: 1rem;
+  font-size: 1em;
+  padding: 5em;
 }
 .services-content{
 
-  margin-top: 2em;
+  margin-top: 0.5em;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
@@ -372,6 +387,8 @@ hr {
   display: none;
 }
 
+
+
 @media (max-width: 600px){
   .row{
     width: 250px;
@@ -380,5 +397,106 @@ hr {
   
   .services-content {
     padding: 1rem 1.5rem;
+  }
+}
+
+/* .about-container{
+  display:grid;
+  grid-template-areas: 
+  "trainer-image trainer-info";
+}
+
+.trainer-image img{
+  margin: 3em;
+  max-height: 70vh;
+  max-width: 50vw;
+  width: auto;
+  height: auto;
+  border-radius: 5px;
+
+}
+
+.trainer-info{
+  margin: 3em;
+  color: white;
+}
+
+.trainer-info ul li{
+  list-style: none;
+} */
+
+.about {
+  padding: 4rem 2rem;
+  background: linear-gradient(to bottom, #111, #222);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-container {
+  max-width: 1100px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+
+.trainer-image img {
+  margin-top: 4em;
+  margin-left: 2em;
+  width: 300px;
+  border-radius: 20px;
+}
+
+.trainer-info {
+  flex: 1;
+}
+
+.trainer-info h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.trainer-info h2 span {
+  color: var(--sub-main-color-2);
+}
+
+.trainer-info ul li{
+  color: white;
+}
+.trainer-info .title {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.achievements {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.achievements li {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.trainer-info .bio {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .trainer-image img {
+    width: 80%;
   }
 }
