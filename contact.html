@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="Style.css">
+
 </head>
 <body>
     <div class = "empty-space"></div>
@@ -72,32 +73,53 @@
 
         </nav>
     </header>
-
-        <!-- Trainers section -->
-        <h2 class = "heading">Our <span> Trainers</span></h2>
-        <div class="about-container">
-            <div class="trainer-card">
-                    <div class="trainer-image">
-                        <img src="img_gym/sreejandai.png" alt="Shreejan Shrestha - Fitness Trainer" class="sreejan-dai">
-                    
-                        <div class="trainer-info">
-                            <h2>Meet <span>Shreejan Shrestha</span></h2>
-                            <p class="title">Certified Fitness Trainer</p>
-                            <ul class="achievements">
-                            <li>💪 2000+ Body Transformations</li>
-                            <li>🏆 9 Years of Professional Experience</li>
-                            <li>🥇🥇🥇 bodybuilder</li>
-                            </ul>
-                            <p class="bio">With nearly a decade of experience, Shreejan has helped thousands achieve their fitness goals. His personalized coaching style combines science, discipline, and motivation to deliver lasting transformations.</p>
-                        </div>
-                    </div>
+    
+    <h1 class = "heading">Contact Us--<span>ReviveFitness</span></h1>
+    <p class = "reg-texts">Feel free to use the form or drop us an email. Phone calls work too.</p>
+    <main id="How-to-contact">
+  <!-- LEFT: Info -->
+        <section id="info">
+            <ul class="contact-info">
+            <li>
+                <img src="Symbols/call_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="phone-ReviveFitness.np">
+                <span>(+977) 9843567690</span>
+            </li>
+            <li>
+                <img src="Symbols/mail_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="email-ReviveFitness.np">
+                <span>revivefitness.np@gmail.com</span>
+            </li>
+            <li>
+                <img src="Symbols/schedule_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="hours-ReviveFitness.np">
+                <span>Sun-Fri 5AM-9PM</span>
+            </li>
+            </ul>
+        </section>
+  <!-- RIGHT: Contact Form -->
+        <section class="contact-box">
+            <form>
+            <div class="form-row">
+                <div class="input-group">
+                    <label for="first-name">Name</label>
+                    <input type="text" id="first-name" placeholder="First" required>
+                    <input type="text" id="last-name" placeholder="Last" required>
+                </div>
             </div>
-        </div>
-    </section>
-
-
-    <footer></footer>
-
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="example@email.com" required>
+            </div>
+            <div class="input-group">
+                <label for="phone">Phone (optional)</label>
+                <input type="text" id="phone" placeholder="xxx-xxx-xxxx">
+            </div>
+            <div class="input-group">
+                <label for="message">Message</label>
+                <textarea id="message" rows="4" placeholder="Type your message ..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </section>
+</main>
 
 </body>
 </html>

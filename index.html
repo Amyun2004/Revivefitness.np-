@@ -13,17 +13,15 @@
     <div class = "empty-space"></div>
     <header>
         <!-- logo -->
-        <nav>
-            <div>
-                <a href = "#home" class = "logo"><img src = "logo/RandHand.png" alt = "ReviveFitness.np"></a>
-            </div>
+        <nav id = "navbar">
+            <a href = "#home" class = "logo"><img src = "logo/RandHand.png" alt = "ReviveFitness.np"></a>
 
         <!-- navication bar  -->
             <ul class = "navbar">
                 <li><a href="#home" class = "hideOnMobile">Home</a></li>
                 <li><a href="about.html" class = "hideOnMobile">About</a></li>
                 <li><a href="programs.html" class = "hideOnMobile">Programs</a></li>
-                <li><a href="#Contact" class = "hideOnMobile">Contact</a></li>
+                <li><a href="contact.html" class = "hideOnMobile">Contact</a></li>
                 <li><a href="#Location" class = "hideOnMobile" >Location</a></li>
                 <li><a href="#Products"  class = "hideOnMobile">Membership</a></li>
                   
@@ -35,20 +33,20 @@
             </div>
 
 
-            <div class = "nav-btn">
+            <div class = "nav-btn HIDEONMOBILE">
                 <a href = "#" >Join Us</a>
             </div>
 
         <!-- sidebar  -->
             
             <ul class = "sidebar">
-                <li><a href = "#home" class = "logo"><img src = "logo/RandHand.png" alt = "ReviveFitness.np"></a></li>
+                <li><a href = "index.html" class = "logo"><img src = "logo/RandHand.png" alt = "ReviveFitness.np"></a></li>
                 <hr>
                 <li><a href="about.html">About</a></li>
                 <hr>
                 <li><a href="programs.html">Programs</a></li>
                 <hr>
-                <li><a href="#Contact">Contact</a></li>
+                <li><a href="contact.html">Contact</a></li>
                 <hr>
                 <li><a href="#Location">Location</a></li>
                 <hr>
@@ -92,30 +90,54 @@
 
     </section>
     <!-- About part  -->
-    <section id = "about">
-            <div class="about-container">
-                <div class="trainer-image">
-                    <img src="img_gym/sreejandai.png" alt="Shreejan Shrestha - Fitness Trainer" class = "sreejan-dai">
-                </div>
-                <div class="trainer-info">
-                    <h2>Meet <span>Shreejan Shrestha</span></h2>
-                    <p class="title">Certified Fitness Trainer</p>
-                    <ul class="achievements">
-                        <li>💪 2000+ Body Transformations</li>
-                        <li>🏆 9 Years of Professional Experience</li>
-                        <li>🥇🥇🥇 bodybuilder</li>
-                    </ul>
-                    <p class="bio">With nearly a decade of experience, Shreejan has helped thousands achieve their fitness goals. His personalized coaching style combines science, discipline, and motivation to deliver lasting transformations.</p>
-                </div>
+     <h2 class = "heading">Our <span>Trainers</span></h2>
+        <div class="about-container">
+            <div class="trainer-card">
+                    <div class="trainer-image">
+                        <img src="img_gym/sreejandai.png" alt="Shreejan Shrestha - Fitness Trainer" class="sreejan-dai">
+                    
+                        <div class="trainer-info">
+                            <h2>Meet <span>Shreejan Shrestha</span></h2>
+                            <p class="title">Certified Fitness Trainer</p>
+                            <ul class="achievements">
+                            <li>💪 2000+ Body Transformations</li>
+                            <li>🏆 9 Years of Professional Experience</li>
+                            <li>🥇🥇🥇 bodybuilder</li>
+                            </ul>
+                            <p class="bio">With nearly a decade of experience, Shreejan has helped thousands achieve their fitness goals. His personalized coaching style combines science, discipline, and motivation to deliver lasting transformations.</p>
+                        </div>
+                    </div>
             </div>
+        </div>
 
     </section>
     <!-- programs section -->
+
     <section id = "Programs">
+        <script>
+            function updateMasking() {
+                const scroller = document.querySelector('.services-content');
+                const isScrollable = scroller.scrollWidth > scroller.clientWidth;
+
+                if (isScrollable) {
+                scroller.style.maskImage = 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)';
+                scroller.style.webkitMaskImage = 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)';
+                } else {
+                scroller.style.maskImage = 'none';
+                scroller.style.webkitMaskImage = 'none';
+                }
+            }
+
+            window.addEventListener('load', updateMasking);
+            window.addEventListener('resize', updateMasking);
+        </script>
+
         <div class = "Programs-container">
             <h2 class = "heading">Our <span>Services</span></h2>
             <h3 class = "reg-texts">We offer varity of services for our customer(s) including a regular gym membership, along with other exciting offers. Some of our popular programs are below.</h3>
+            <span class="scroll-hint">⇠ Scroll ⇢</span>
             <div class="services-content">
+                
                 <div class="row">
                     <div class = "img-wrapper">   
                         <img src="img_gym/personal coaching.png" alt="client_personal_coaching">

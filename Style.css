@@ -6,14 +6,12 @@
 }
 
 /* root i.e defining variables */
-
 :root{
   --main-color: black;
   --sub-main-color: #333;
   --sub-main-color-2: #ffcc00;
   --main-font-color: white;
 }
-
 
 html{
   scroll-behavior: smooth;
@@ -27,14 +25,12 @@ header {
 /* body  */
 body{
     background-color: var(--main-color);
-    font-size: var(--text-size);
     color: var(--main-font-color);
     box-sizing: border-box;
 }
 /* Empty spacing strip */
 .empty-space {
   height: 1em;
-  width: 100vw;
   background: linear-gradient(to right, black, #333);
 }
 
@@ -44,15 +40,17 @@ header nav {
   justify-content: space-between;
   align-items: center;
   background: linear-gradient(to right, black, #333);
+  background-color: #000;
   color: #f4e514;
   padding: 2em 1em;
   height: 60px;
-  width: 100vw;
 }
 
-header a img {
-  max-width: 30vw;
-  max-height: 10vh;
+header .logo img {
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+  padding: 0.5em;
 }
 
 /* Navbar Links */
@@ -65,10 +63,14 @@ header nav ul {
   width: 100%;
 }
 
+header nav ul li{
+  padding: 0 1em;
+}
+
 header nav a {
   color: white;
   text-decoration: none;
-  padding: 0 1em;
+  padding: 0 0.25em;
 }
 
 header nav a:hover {
@@ -88,6 +90,11 @@ header nav a:hover {
   text-align: center;
   box-sizing: border-box;
   overflow: hidden;
+  font-size: small;
+}
+
+#navbar nav-btn{
+  position: absolute;
 }
 
 .nav-btn a {
@@ -114,11 +121,11 @@ hr {
 
 /* Sidebar */
 .sidebar {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
-  height: 75vh;
-  width: 25vw;
+  height: 40em;
+  width: 10em;
   background-color: rgba(208, 181, 4, 0.2);
   backdrop-filter: blur(20px);
   box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
@@ -152,11 +159,9 @@ hr {
   background-color: #ffcc00;
   border-radius: 8px;
   box-sizing: border-box;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   overflow: hidden;
   text-align: center;
 }
@@ -174,13 +179,11 @@ hr {
   display: inline-block;
 }
 
-
 /* Sidebar Close Button */
 .sidebar .hidebutton img {
   background-color: black;
   width: 30px;
   border-radius: 5px;
-  
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
@@ -211,7 +214,6 @@ hr {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -234,8 +236,9 @@ hr {
 
 #logo {
   grid-area: logo;
-  max-width: 30em;
+  max-width: 90%;
   max-height: 40em;
+  margin-left: 5%;
 }
 
 .quote {
@@ -255,65 +258,24 @@ hr {
   justify-self: center;
 }
 
-/* Responsive Styles */
-@media (max-width: 805px) {
-  .hideOnMobile {
-    display: none;
-  }
-
-  .menubutton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: auto;
-  }
-}
-
-
-/* Programs section */
-
-
-.heading{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--main-font-color);
-    margin-top: 3rem;
-    font-size: 2em;
-}
-
-.reg-texts{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--main-font-color);
-  margin-top: 1rem;
-  font-size: 1em;
-  padding: 5em;
-}
-.services-content{
-
-  margin-top: 0.5em;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  max-width: 100vw;
-  box-sizing: border-box;
+/* Services/Programs horizontal scroll and cards */
+.services-content {
   display: flex;
   flex-wrap: nowrap;
-  overflow-x:auto;
-  justify-content: flex-start;
-  gap: 2rem;
-  padding: 1rem 2rem;
+  overflow-x: auto;
+  overflow-y: hidden;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  gap: 2rem;
+  padding: 1rem 2rem;
+  width: 100%;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
 
+.services-content::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 .row {
@@ -329,21 +291,19 @@ hr {
   position: relative;
   scroll-snap-align: center;
   transition: transform 0.4s ease;
-  margin-left: 0;
-  margin-right: 0;
-
 }
-
 
 .img-wrapper {
   position: relative;
   width: 100%;
+  height: 280px;
   border-radius: 15px;
+  overflow: hidden;
 }
 
 .img-wrapper img {
   width: 100%;
-  height: auto;
+  height: 100%;
   border-radius: 15px;
   object-fit: cover;
   transition: transform 0.4s ease;
@@ -356,6 +316,7 @@ hr {
   width: 100%;
   height: 100%;
   background-color: transparent;
+  transition: background-color 0.3s ease;
 }
 
 .overlay-text {
@@ -369,77 +330,44 @@ hr {
   text-align: center;
   padding: 0.5rem 1rem;
   border-radius: 10px;
+  transition: color 0.3s ease;
 }
-
 
 .img-wrapper:hover .overlay-text {
   color: var(--sub-main-color-2);
 }
 
 .row:hover {
-  transform: translateY(-10px) scale(1.05) ;
+  transform: translateY(-10px) scale(1.05);
 }
 
-.img-wrapper:hover .img-overlay{
+.img-wrapper:hover .img-overlay {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-.services-content::-webkit-scrollbar{
-  display: none;
-}
-
-
-
-@media (max-width: 600px){
-  .row{
-    width: 250px;
-    min-width: 250px;
+@media (max-width: 600px) {
+  .row {
+    width: 280px;
+    min-width: 280px;
   }
-  
   .services-content {
     padding: 1rem 1.5rem;
+    gap: 1.5rem;
   }
 }
 
-/* .about-container{
-  display:grid;
-  grid-template-areas: 
-  "trainer-image trainer-info";
-}
-
-.trainer-image img{
-  margin: 3em;
-  max-height: 70vh;
-  max-width: 50vw;
-  width: auto;
-  height: auto;
-  border-radius: 5px;
-
-}
-
-.trainer-info{
-  margin: 3em;
-  color: white;
-}
-
-.trainer-info ul li{
-  list-style: none;
-} */
-
-.about {
-  padding: 4rem 2rem;
-  background: linear-gradient(to bottom, #111, #222);
-  color: white;
+/* Trainer Section */
+.trainer-card{
   display: flex;
   justify-content: center;
-  align-items: center;
 }
-
 .about-container {
-  max-width: 30em;
+  max-width: 22em;
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   gap: 2rem;
   position: relative;
   overflow: hidden;
@@ -455,7 +383,6 @@ hr {
   transition: transform 0.5s ease;
   display:block;
 }
-
 .trainer-image{
   position: relative;
   overflow: hidden;
@@ -534,18 +461,7 @@ hr {
   margin-top: 2em;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .about-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .trainer-image img {
-    width: 80%;
-  }
-}
-
+/* Headings */
 .heading {
   display: flex;
   align-items: center;
@@ -557,7 +473,7 @@ hr {
   position: relative;
 }
 
- .heading::after {
+.heading::after {
   content: '';
   position: absolute;
   bottom: -10px;
@@ -568,10 +484,11 @@ hr {
   background: linear-gradient(90deg, transparent, var(--sub-main-color-2), transparent);
 }
 
- .heading span {
+.heading span {
   color: var(--sub-main-color-2);
 }
- .reg-texts {
+
+.reg-texts {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -584,15 +501,6 @@ hr {
   margin-right: auto;
   text-align: center;
   line-height: 1.6;
-}
-
-
-.img-wrapper {
-  position: relative;
-  width: 100%;
-  height: 280px;
-  border-radius: 20px;
-  overflow: hidden;
 }
 
 /* Enhanced Programs and Pricing Section */
@@ -633,6 +541,7 @@ hr {
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
   overflow: hidden;
+  animation: fadeInUp 0.6s ease forwards;
 }
 
 .program-box::before {
@@ -769,9 +678,9 @@ hr {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .reg-texts {
-      padding: 0 1rem;
+      padding: 2em;
   }
 
   .program-box table th,
@@ -793,13 +702,551 @@ hr {
   }
 }
 
-.program-box {
-  animation: fadeInUp 0.6s ease forwards;
+/* Responsive */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .trainer-image img {
+    width: 80%;
+  }
 }
 
-.program-box:nth-child(1) { animation-delay: 0.1s; }
-.program-box:nth-child(2) { animation-delay: 0.2s; }
-.program-box:nth-child(3) { animation-delay: 0.3s; }
-.program-box:nth-child(4) { animation-delay: 0.4s; }
-.program-box:nth-child(5) { animation-delay: 0.5s; }
-.program-box:nth-child(6) { animation-delay: 0.6s; }
+@media (max-width: 600px){
+  .row{
+    width: 250px;
+    min-width: 250px;
+  }
+  .services-content {
+    padding: 1rem 1.5rem;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 891px) {
+  .hideOnMobile {
+    display: none;
+  }
+
+  .menubutton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    top: 54%;
+  }
+
+}
+
+#How-to-contact {
+  margin-top: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5vw;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2em 1em;
+}
+
+.contact-info {
+  flex: 1.1;
+  min-width: 260px;
+  margin: 0 1em 0 0;
+  padding: 1.5em 1em;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-info li {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  color: var(--main-font-color);
+  margin-bottom: 1.5em;
+  gap: 1em;
+}
+
+.contact-info img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+.contact-box {
+  flex: 1.3;
+  min-width: 320px;
+  background: #181818;
+  padding: 2.2em 1.5em 2em 1.5em;
+  border-radius: 1em;
+  box-shadow: 0 2px 24px rgba(0,0,0,0.13);
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+}
+
+.form-row {
+  display: flex;
+  gap: 1em;
+}
+
+.input-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  font-size: 1.08em;
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 0.45em;
+  letter-spacing: 0.01em;
+}
+
+.input-group input,
+.input-group textarea {
+  font-size: 1.13em;
+  padding: 1em 1em;
+  border: 2px solid var(--sub-main-color-2);
+  background: #222;
+  color: #fff;
+  border-radius: 0.6em;
+  outline: none;
+  margin-bottom: 0.15em;
+  transition: border 0.18s;
+  resize: none;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border: 2px solid #ffcc00;
+}
+
+.input-group textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.submit-btn {
+  background: #ff4500;
+  color: #fff;
+  font-size: 1.22em;
+  border: none;
+  border-radius: 2em;
+  padding: 0.7em 0;
+  font-weight: bold;
+  margin-top: 0.7em;
+  transition: background 0.18s;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+}
+
+.submit-btn:hover {
+  background: #e03c00;
+}
+
+.invisible-label {
+  visibility: hidden;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 950px) {
+  #How-to-contact {
+    flex-direction: column;
+    gap: 2.2em;
+    padding: 1em;
+  }
+  .contact-info,
+  .contact-box {
+    min-width: 240px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  #How-to-contact {
+    padding: 0.5em 0.2em;
+    gap: 1em;
+  }
+  .contact-info {
+    padding: 0.5em 0.1em;
+  }
+  .contact-box {
+    padding: 1em 0.3em 1.2em 0.3em;
+  }
+  .form-row {
+    flex-direction: column;
+    gap: 0.5em;
+  }
+}
+
+/* Add these media queries to your existing CSS */
+
+/* Small phone (320px) */
+@media (max-width: 320px) {
+  .HIDEONMOBILE{
+    display: none;
+  }
+  #How-to-contact {
+    padding: 0.5em 0.5em;
+    gap: 1.5em;
+    margin-top: 1.5em;
+  }
+  .contact-info {
+    padding: 1em 0.5em;
+    margin: 0;
+  }
+  .contact-info li {
+    font-size: 1rem;
+    margin-bottom: 1.2em;
+    gap: 0.8em;
+  }
+  .contact-info img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+  }
+  .contact-box {
+    padding: 1.5em 1em;
+    min-width: 280px;
+  }
+  .input-group label {
+    font-size: 1rem;
+    margin-bottom: 0.3em;
+  }
+  .input-group input,
+  .input-group textarea {
+    font-size: 1rem;
+    padding: 0.8em 0.8em;
+  }
+  .submit-btn {
+    font-size: 1.1em;
+    padding: 0.6em 0;
+  }
+  .heading {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+  }
+  .reg-texts {
+    font-size: 0.9rem;
+    padding: 1em;
+  }
+  .sidebar {
+    width: 100vw;
+    height: 100vh;
+    right: 0;
+    top: 0;
+    border-radius: 0;
+    padding: 0;
+    /* add this if needed: */
+    overflow-y: auto;
+  }
+  .sidebar .nav-btn {
+    width: 90vw;
+    max-width: 95vw;
+    margin: 1em auto;
+    padding: 0.7em 0.3em;
+  }
+  .about-content {
+    width: 100vw;
+    max-width: 100vw;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0;
+  }
+  body {
+    overflow-x: hidden;
+  }
+  .heading {
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 0 0.5em;
+    text-align: center;
+    word-break: break-word;
+  }
+  .menubutton {
+    top: 50%;
+    left: 90%;
+    width: 0;
+
+  }
+}
+
+/* Medium phone (321px - 376px) */
+@media (min-width: 321px) and (max-width: 376px) {
+  .HIDEONMOBILE{
+    display: none;
+  }
+  #How-to-contact {
+    padding: 0.8em 0.8em;
+    gap: 1.8em;
+    margin-top: 1.8em;
+  }
+  .contact-info {
+    padding: 1.2em 0.8em;
+    margin: 0;
+  }
+  .contact-info li {
+    font-size: 1.1rem;
+    margin-bottom: 1.3em;
+    gap: 0.9em;
+  }
+  .contact-info img {
+    width: 26px;
+    height: 26px;
+    margin-right: 9px;
+  }
+  .contact-box {
+    padding: 1.8em 1.2em;
+    min-width: 300px;
+  }
+  .input-group label {
+    font-size: 1.05em;
+    margin-bottom: 0.35em;
+  }
+  .input-group input,
+  .input-group textarea {
+    font-size: 1.05em;
+    padding: 0.9em 0.9em;
+  }
+  .submit-btn {
+    font-size: 1.15em;
+    padding: 0.65em 0;
+  }
+  .heading {
+    font-size: 2rem;
+    margin-top: 2.2rem;
+  }
+  .reg-texts {
+    font-size: 0.95rem;
+    padding: 1.2em;
+  }
+  .sidebar {
+    width: 100vw;
+    height: 100vh;
+    right: 0;
+    top: 0;
+    border-radius: 0;
+    padding: 0;
+    /* add this if needed: */
+    overflow-y: auto;
+  }
+  .sidebar .nav-btn {
+    width: 90vw;
+    max-width: 95vw;
+    margin: 1em auto;
+    padding: 0.7em 0.3em;
+  }
+  .about-content {
+    width: 100vw;
+    max-width: 100vw;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0;
+  }
+  body {
+    overflow-x: hidden;
+  }
+  .heading {
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 0 0.5em;
+    text-align: center;
+    word-break: break-word;
+  }
+  .menubutton {
+    top: 50%;
+    left: 90%;
+    width: 0;
+
+  }
+}
+
+/* Large phone (376px - 431px) */
+@media (min-width: 376px) and (max-width: 431px) {
+  .HIDEONMOBILE{
+    display: none;
+  }
+  #How-to-contact {
+    padding: 1em 1em;
+    gap: 2em;
+    margin-top: 2em;
+  }
+  .contact-info {
+    padding: 1.3em 1em;
+    margin: 0;
+  }
+  .contact-info li {
+    font-size: 1.15rem;
+    margin-bottom: 1.4em;
+    gap: 1em;
+  }
+  .contact-info img {
+    width: 27px;
+    height: 27px;
+    margin-right: 10px;
+  }
+  .contact-box {
+    padding: 2em 1.3em;
+    min-width: 320px;
+  }
+  .input-group label {
+    font-size: 1.06em;
+    margin-bottom: 0.4em;
+  }
+  .input-group input,
+  .input-group textarea {
+    font-size: 1.1em;
+    padding: 0.95em 0.95em;
+  }
+  .submit-btn {
+    font-size: 1.18em;
+    padding: 0.68em 0;
+  }
+  .heading {
+    font-size: 2.2rem;
+    margin-top: 2.5rem;
+  }
+  .reg-texts {
+    font-size: 1rem;
+    padding: 1.5em;
+  }
+  .sidebar {
+    width: 100vw;
+    height: 100vh;
+    right: 0;
+    top: 0;
+    border-radius: 0;
+    padding: 0;
+    /* add this if needed: */
+    overflow-y: auto;
+  }
+  .sidebar .nav-btn {
+    width: 90vw;
+    max-width: 95vw;
+    margin: 1em auto;
+    padding: 0.7em 0.3em;
+  }
+   .about-content {
+    width: 100vw;
+    max-width: 100vw;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0;
+  }
+  body {
+    overflow-x: hidden;
+  }
+   .heading {
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 0 0.5em;
+    text-align: center;
+    word-break: break-word;
+  }
+  .menubutton {
+    top: 50%;
+    left: 90%;
+    width: 0;
+
+  }
+}
+
+/* Additional improvements for all phone sizes */
+@media (max-width: 425px) {
+  
+  .form-row {
+    flex-direction: column;
+    gap: 0.8em;
+  }
+  .input-group input + input {
+    margin-top: 0.5em;
+  }
+  .input-group textarea {
+    min-height: 80px;
+    max-height: 120px;
+  }
+  .submit-btn {
+    margin-top: 1em;
+    border-radius: 1.5em;
+  }
+  header nav {
+    padding: 1.5em 0.8em;
+    height: 50px;
+  }
+  header .logo img {
+    height: 80px;
+    padding: 0.3em;
+  }
+  .menubutton {
+    top: 50%;
+  }
+  .sidebar {
+    width: 100vw;
+    height: 100vh;
+    right:0;
+    top: 0;
+    border-radius: 0;
+    padding: 0;
+    overflow-y: auto;
+
+  }
+  .sidebar .nav-btn {
+    width: 90vw;
+    max-width: 95vw;
+    margin: 1em auto;
+    padding: 0.7em 0.3em;
+  }
+  .empty-space {
+    height: 0.5em;
+  }
+  .about-content{
+    width: 100vw;
+    max-width: 100vw;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0;
+  }
+  body{
+    overflow-x: hidden;
+  }
+  .heading{
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 0 0.5em;
+    text-align: center;
+    word-break: break-word;
+  }
+}
+
+@media  (max-width:427) {
+  .HIDEONMOBILE{
+    display: none;
+  }
+}
