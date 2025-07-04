@@ -14,7 +14,9 @@
   --sub-main-color-2: #ffcc00;
   --main-font-color: white;
 }
-
+html{
+  scroll-behavior: smooth;
+}
 /* header */
 header {
   position: sticky;
