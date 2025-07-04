@@ -663,9 +663,6 @@ hr {
   line-height: 1.6;
 }
 
-.Programs-container {
-  /* just to not break the .services-content inside */
-}
 .scroll-hint {
   color: #bbb;
   font-size: 1.1rem;
@@ -673,9 +670,6 @@ hr {
   margin-bottom: 0.8rem;
 }
 
-.location-container, .products-container {
-  /* Placeholder, as in HTML */
-}
 
 /* Responsive adjustments */
 @media (max-width: 600px) {
