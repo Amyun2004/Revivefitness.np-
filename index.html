@@ -66,6 +66,8 @@
                 function showSidebar(){
                     const sidebar = document.querySelector(".sidebar")
                     sidebar.style.display = "flex";
+                    
+                
                 }
                 function hideSidebar(){
                     const sidebar = document.querySelector(".sidebar")
@@ -87,9 +89,22 @@
                 <a >Join us</a>
             </div>
         </div>
-
     </section>
+
     <!-- About part  -->
+    <section class="section-about">  <!-- " about-section"-->
+            <h1>About <span>ReviveFitness</span></h1>
+            <div class="content-about"><!--about-content -->
+                <img src="logo/RandHand.png" alt="ReviveFitness Logo" class="logo-about"> <!-- about-logo -->
+                <div class="text-about"> <!-- about-text -->
+                    <h2>Our Story</h2>
+                    <p>
+                        ReviveFitness.np was founded with a simple vision: to make fitness accessible, enjoyable, and sustainable for everyone in Nepal. We believe in a holistic approach to health—where mind, body, and community thrive together.
+                    </p>
+                </div>
+            </div>
+    </section>
+    
      <h2 class = "heading">Our <span>Trainers</span></h2>
         <div class="about-container">
             <div class="trainer-card">
@@ -178,10 +193,6 @@
             </div>
         </div>
     </section>
-    <!-- contact info section -->
-    <section id = "Contact">
-        <div class = "Contact-container"></div>
-    </section>
     <!-- location section -->
     <section id = "Location">
         <div class = "location-container"></div>
@@ -193,6 +204,39 @@
 
 
     
-    <footer></footer>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="logo/RandHand.png" alt="ReviveFitness Logo">
+                <p>Your Journey, Our Passion</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p>Email: revivefitness.np@gmail.com</p>
+                <p>Phone: +977-9876543210</p>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+            
+                <a href="#"><img src="logo\icons8-instagram.svg" alt="Instagram"></a>
+                <a href="#"><img src="logo\icons8-facebook.svg" alt="Facebook"></a>
+                <!-- add more icons -->
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 ReviveFitness.np. All rights reserved.</p>
+            <a href="privacy.html">Privacy Policy</a> |
+            <a href="terms.html">Terms of Service</a>
+        </div>
+    </footer>
 </body>
 </html>
