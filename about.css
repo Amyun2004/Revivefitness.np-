@@ -175,7 +175,6 @@ hr {
   font-size: 1rem;
   text-decoration: none;
   white-space: nowrap;
-  text-overflow: ellipsis;
   overflow: hidden;
   width: 100%;
   text-align: center;
@@ -235,9 +234,9 @@ hr {
   }
 }
 @media (max-width: 890px){
-  .sidebar{
+  /* .sidebar{
     display: flex;
-  }
+  } */
   .menubutton {
     display: flex;
   }
@@ -245,7 +244,7 @@ hr {
 @media (max-width: 600px) {
   .sidebar {
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
     right: 0;
     top: 0;
     border-radius: 0;
@@ -266,6 +265,27 @@ hr {
   .HIDEONMOBILE{
     display: none;
   }
+
+  .sidebar .hidebutton {
+    position: absolute;
+    top: 1em;
+    left: 85%;  /* override default */
+ /* override default */
+    z-index: 1001; /* above the sidebar content */
+    margin-right: 1em;
+    padding: 0;
+  }
+  .sidebar .hidebutton a,
+  .sidebar .hidebutton img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    height: 2em;
+    background: #222;
+    border-radius: 10%;
+    padding: 0.3em;
+  }
 }
 @media (max-width: 320px) {
   .HIDEONMOBILE{
@@ -273,7 +293,7 @@ hr {
   }
   .sidebar {
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
     right: 0;
     top: 0;
     border-radius: 0;
@@ -298,7 +318,7 @@ hr {
   }
   .sidebar {
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
     right: 0;
     top: 0;
     border-radius: 0;
@@ -323,7 +343,7 @@ hr {
   }
   .sidebar {
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
     right: 0;
     top: 0;
     border-radius: 0;
@@ -765,4 +785,29 @@ footer {
 
 .footer-container .footer-social h4{
  padding: 1em;
+}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 4em;
+  margin-top: 2em;
+}
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 15%;
+  width: 70%;
+  height: 100%;
+  border: 0;
+  border-radius: 10px;
+
+}
+
+span{
+  color: var(--sub-main-color-2);
 }
